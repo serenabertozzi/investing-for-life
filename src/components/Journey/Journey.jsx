@@ -17,14 +17,18 @@ export const Journey = () => {
       navigate("/feedback", { state: { title: "end", text: selectedValue, step: currentStep } });
     }  };
 
-  const { chapter, question, answers } = journeySteps[currentStep];
+  const { chapter, title, question, answers } = journeySteps[currentStep];
 
   console.log(journeySteps[currentStep]);
   
   return (
+<>
+      <Heading text={chapter} title={title} />
+    
     <div className="flex flex-col items-center gap-12 justify-center h-screen">
-      <Heading text={chapter} />
+    
       <h2>{question}</h2>
+      
       <div className="flex flex-col items-center p-8">
         {answers.map((answer, index) => (
           <button key={index} onClick={() => handleNextStep(answer)}>
@@ -33,5 +37,6 @@ export const Journey = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
