@@ -1,15 +1,18 @@
 import "./App.css";
-import { Landing } from "./pages/landing";
+import { Home } from "./components/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Quiz } from "./pages/quiz";
+import { CharacterAvatarProvider } from "./context/CharacterAvatarContext"; 
 
 export const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path={"/"} element={<Landing />} />
-        <Route path={"/quiz"} element={<Quiz />} />
-      </Routes>
-    </BrowserRouter>
+    <CharacterAvatarProvider> 
+      <BrowserRouter>
+        <Routes>
+          <Route path={"/"} element={<Home />} />
+          <Route path={"/quiz"} element={<Quiz />} />
+        </Routes>
+      </BrowserRouter>
+    </ CharacterAvatarProvider> 
   );
 };
