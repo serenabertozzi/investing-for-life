@@ -10,9 +10,8 @@ export const Question = ({ question, a1, a2, a3 }) => {
 
   const navigate = useNavigate();
 
-  const handleSubmit = (selectedValue) => {
-    const inputValue = selectedValue;
-    navigate("/feedback", { state: inputValue });
+  const handleSubmit = () => {
+    navigate("/feedback", { state: { inputValue: selectedValue } });
   };
 
   return (
