@@ -14,10 +14,10 @@ export const Home = () => {
 
   return (
     <div className="flex flex-col items-center gap-12 justify-center h-screen">
-      <hi>Investing for life</hi>
-      <h2>Choose your avatar: </h2>
+      <hi className="text-dark-green font-semibold text-6xl mb-10">Investing for life</hi>
+      <h2 className="text-dark-green font-bold text-2xl">Choose your avatar: </h2>
       {selectedAvatar && <p className="underline">{selectedAvatar}</p>}
-      <div className="flex gap-8">
+      <div className="flex gap-20 bg-white rounded-full p-8">
         <img style={{ width: "100px" }} src={girlFlower} alt="girlFlower" onClick={() => setSelectedAvatar(girlFlower)} />
         <img style={{ width: "100px" }} src={girlCherry} alt="girlCherry" onClick={() => setSelectedAvatar(girlCherry)} />
         <img style={{ width: "100px" }} src={bee} alt="bee" onClick={() => setSelectedAvatar(bee)} />
@@ -25,7 +25,7 @@ export const Home = () => {
         <img style={{ width: "100px" }} src={boy} alt="boy" onClick={() => setSelectedAvatar(boy)} />
         <img style={{ width: "100px" }} src={mushroom} alt="mushroom" onClick={() => setSelectedAvatar(mushroom)} />
       </div>
-      <button onClick={() => navigate("/quiz")}>Start Quiz</button>
+      <button className="bg-[#0C333B] rounded-full text-white p-4 px-8 font-semibold" onClick={() => navigate("/journey")}>Start Quiz</button>
     </div>
   );
 };
