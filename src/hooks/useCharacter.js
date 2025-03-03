@@ -1,7 +1,6 @@
 import { useContext } from 'react';
 import { CharacterAvatarContext } from '../context/CharacterAvatarContext';
 
-// Custom hook to use the CharacterAvatarContext
 export const useCharacter = () => {
   const context = useContext(CharacterAvatarContext);
   if (!context) {
@@ -9,5 +8,3 @@ export const useCharacter = () => {
   }
   return context;
 };
-
-export default useCharacter;

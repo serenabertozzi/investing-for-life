@@ -4,12 +4,8 @@ import city from '../../assets/backgrounds/city.png';
 import wood from '../../assets/backgrounds/wood.png';
 import room from '../../assets/backgrounds/room.png';
 
-
-
-
 export const HeroBanner = ({ question, chapter }) => {
   const { selectedAvatar } = useCharacter();
-
 
   const chooseBackground = () => {
     if (chapter === "Chapter 1") {
@@ -20,7 +16,6 @@ export const HeroBanner = ({ question, chapter }) => {
       return { backgroundImage: `url(${city})`, backgroundSize: 'cover', backgroundPosition: 'bottom', opacity: 0.6 };
     }
   }
-
 
   return (
     <div className="relative w-full h-[20rem]">
@@ -33,7 +28,6 @@ export const HeroBanner = ({ question, chapter }) => {
       </div>
       <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[-4px]">
         <img className="w-[200px] h-[200px]" src={selectedAvatar} alt="Avatar" />
-        
       </div>
     </div>
   );

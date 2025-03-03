@@ -16,17 +16,20 @@ export const Feedback = () => {
       navigate("/");
     }
   };
+
   return (
-    <div className="flex flex-col items-center gap-12 justify-center h-screen">
+    <>
       <Heading text={title} />
-      <p>{text}</p>
-      <button
-        className="bg-[#0C333B] rounded-full text-white p-4 px-8 font-semibold"
-        onClick={handleNextStep}
-      >
-        Next Step
-      </button>
-      <Counter />
-    </div>
+      <div className="flex flex-col items-center gap-12 justify-center h-screen">
+        <p>{text}</p>
+        <button
+          className="bg-[#0C333B] rounded-full text-white p-4 px-8 font-semibold"
+          onClick={handleNextStep}
+        >
+          Next Step
+        </button>
+        <Counter />
+      </div>
+    </>
   );
 };

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import star from '../../assets/star.png';
 
-
 export const Counter = () => {
 
   const [points, setPoints] = useState(0);
@@ -12,8 +11,6 @@ export const Counter = () => {
   }
 
   return (
-    <>  
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
           <div style={{
             display: "flex",
             alignItems: "center",
@@ -25,7 +22,5 @@ export const Counter = () => {
             <img style={{ width: "50px" }} src={star} alt="star" />
             <p style={{ marginLeft: "20px" }}>{points} points</p>
           </div>
-        </div>
-    </>
-  );
+          )
 };

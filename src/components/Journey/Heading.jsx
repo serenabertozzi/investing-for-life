@@ -1,5 +1,6 @@
 import React from "react";
 import useCharacter from "../../hooks/useCharacter";
+import { Counter } from "./Counter";
 
 export const Heading = ({ text, title }) => {
   const { selectedAvatar } = useCharacter();
@@ -15,6 +16,9 @@ export const Heading = ({ text, title }) => {
         <h1 className="text-white font-semibold text-5xl">{text}</h1>
         <h2 className="text-white text-2xl mt-3">{title}</h2>
       </div>
-    </div>
+        <div className="absolute right-5 top-1/2 transform -translate-y-1/2">
+          <Counter />
+        </div>
+      </div>
   );
 };
