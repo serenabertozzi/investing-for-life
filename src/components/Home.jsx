@@ -1,11 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import girlCherry from '../assets/girl-cherry.png';
-import girlFlower from '../assets/girl-flower.png';
-import bee from '../assets/bee.png';
-import sheep from '../assets/sheep.png';
-import boy from '../assets/boy.png';
-import mushroom from '../assets/mushroom.png';
-import swLogo from '../assets/swlogo.png';
+import girlCherry from '../assets/avatars/girl-cherry.png';
+import girlFlower from '../assets/avatars/girl-flower.png';
+import bee from '../assets/avatars/bee.png';
+import sheep from '../assets/avatars/sheep.png';
+import boy from '../assets/avatars/boy.png';
+import mushroom from '../assets/avatars/mushroom.png';
 
 import useCharacter from "../hooks/useCharacter";
 
