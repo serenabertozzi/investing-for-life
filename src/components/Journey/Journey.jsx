@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Heading } from "./Heading";
+import { HeroBanner } from "./HeroBanner";
 import { journeySteps } from "../../steps";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -24,14 +25,12 @@ export const Journey = () => {
   return (
 <>
       <Heading text={chapter} title={title} />
-    
-    <div className="flex flex-col items-center gap-12 justify-center h-screen">
-    
-      <h2>{question}</h2>
-      
-      <div className="flex flex-col items-center p-8">
+      <HeroBanner question={question} chapter={chapter} />
+
+    <div className="flex flex-col items-center justify-center mt-16">      
+      <div className="flex justify-center items-center gap-10 p-8">
         {answers.map((answer, index) => (
-          <button key={index} onClick={() => handleNextStep(answer)}>
+          <button className="bg-white rounded-full text-dark-green p-4" key={index} onClick={() => handleNextStep(answer)}>
             {answer}
           </button>
         ))}

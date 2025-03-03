@@ -10,7 +10,7 @@ import useCharacter from "../hooks/useCharacter";
 
 export const Home = () => {
   const navigate = useNavigate();
-  const { selectedAvatar, setSelectedAvatar } = useCharacter();
+  const {  setSelectedAvatar } = useCharacter();
 
   return (
     <div className="flex flex-col items-center gap-12 justify-center h-screen">
@@ -18,7 +18,6 @@ export const Home = () => {
         <img className="w-56" src={swLogo} alt="SW Logo" /> 
       <hi className="text-dark-green font-semibold text-6xl mb-10">Investing for life</hi></div>
       <h2 className="text-dark-green font-bold text-2xl">Choose your avatar: </h2>
-      {selectedAvatar && <p className="underline">{selectedAvatar}</p>}
       <div className="flex gap-20 bg-white rounded-full p-8">
         <img style={{ width: "100px" }} src={girlFlower} alt="girlFlower" onClick={() => setSelectedAvatar(girlFlower)} />
         <img style={{ width: "100px" }} src={girlCherry} alt="girlCherry" onClick={() => setSelectedAvatar(girlCherry)} />
