@@ -4,6 +4,8 @@ import { HeroBanner } from "./HeroBanner";
 import { journeySteps } from "../../steps";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Choice } from "./Choice";
+import { usePoints } from '../../hooks/usePoints';
+
 
 export const Journey = () => {
   const location = useLocation();
@@ -11,19 +13,26 @@ export const Journey = () => {
   const [currentStep, setCurrentStep] = useState(initialStep);
   const navigate = useNavigate();
 
-  const handleNextStep = ({ heading, text }) => {
+  const { totalPoints, setTotalPoints } = usePoints();
+
+  const incrementPoints = (addedAmount) => {
+    setTotalPoints(totalPoints + addedAmount);
+  }
+
+  const handleNextStep = ({ heading, text, points }) => {
+    incrementPoints(totalPoints + points);
+
     if (currentStep < journeySteps.length - 1) {
       setCurrentStep(currentStep + 1);
       navigate("/feedback", {
         state: {
           title: journeySteps[currentStep].chapter,
-          text: `${heading}: ${text}`,
           step: currentStep,
         },
       });
     } else if (currentStep === journeySteps.length - 1) {
       navigate("/feedback", {
-        state: { title: "end", text: `${heading}: ${text}`, step: currentStep },
+        state: { title: "Game Over", step: currentStep },
       });
     }
   };

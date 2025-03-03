@@ -1,0 +1,14 @@
+.avatar {
+  width: 100px;
+  height: 100px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.avatar:hover {
+  transform: translateY(-10px);
+}
+
+.selected {
+  border: 2px solid #0C333B;
+  border-radius: 50%;
+}

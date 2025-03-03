@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import { useCharacter } from "../hooks/useCharacter";
+import { usePoints } from "../hooks/usePoints";
 import girlCherry from "../assets/avatars/girl-cherry.png";
 import girlFlower from "../assets/avatars/girl-flower.png";
 import bee from "../assets/avatars/bee.png";
@@ -6,11 +8,24 @@ import sheep from "../assets/avatars/sheep.png";
 import boy from "../assets/avatars/boy.png";
 import mushroom from "../assets/avatars/mushroom.png";
 import swLogo from "../assets/swLogo.png";
-import useCharacter from "../hooks/useCharacter";
-
+import { useEffect, useState } from "react";
 export const Home = () => {
   const navigate = useNavigate();
   const {  setSelectedAvatar } = useCharacter();
+
+  const { setTotalPoints } = usePoints();
+
+  const [selectedCharacter, setSelectedCharacter] = useState(null);
+
+
+  const handleAvatarClick = (avatar) => {
+    setSelectedAvatar(avatar);
+    setSelectedCharacter(avatar);
+  };
+
+  useEffect(() => {
+    setTotalPoints(0);
+  }, [setTotalPoints])
 
   return (
     <div className="flex flex-col items-center gap-12 justify-center h-screen">
@@ -25,40 +40,46 @@ export const Home = () => {
       </h2>
       <div className="flex gap-20 bg-white rounded-full p-8">
         <img
-          style={{ width: "100px" }}
+          className={`avatar ${selectedCharacter === girlFlower ? 'selected' : ''}`}
           src={girlFlower}
           alt="girlFlower"
-          onClick={() => setSelectedAvatar(girlFlower)}
+          role="button"
+          onClick={() => handleAvatarClick(girlFlower)}
         />
         <img
-          style={{ width: "100px" }}
+          className={`avatar ${selectedCharacter === girlCherry ? 'selected' : ''}`}
           src={girlCherry}
           alt="girlCherry"
-          onClick={() => setSelectedAvatar(girlCherry)}
+          role="button"
+          onClick={() => handleAvatarClick(girlCherry)}
         />
         <img
-          style={{ width: "100px" }}
+          className={`avatar ${selectedCharacter === bee ? 'selected' : ''}`}
           src={bee}
           alt="bee"
-          onClick={() => setSelectedAvatar(bee)}
+          role="button"
+          onClick={() => handleAvatarClick(bee)}
         />
         <img
-          style={{ width: "100px" }}
+          className={`avatar ${selectedCharacter === sheep ? 'selected' : ''}`}
           src={sheep}
           alt="sheep"
-          onClick={() => setSelectedAvatar(sheep)}
+          role="button"
+          onClick={() => handleAvatarClick(sheep)}
         />
         <img
-          style={{ width: "100px" }}
+          className={`avatar ${selectedCharacter === boy ? 'selected' : ''}`}
           src={boy}
           alt="boy"
-          onClick={() => setSelectedAvatar(boy)}
+          role="button"
+          onClick={() => handleAvatarClick(boy)}
         />
         <img
-          style={{ width: "100px" }}
+          className={`avatar ${selectedCharacter === mushroom ? 'selected' : ''}`}
           src={mushroom}
           alt="mushroom"
-          onClick={() => setSelectedAvatar(mushroom)}
+          role="button"
+          onClick={() => handleAvatarClick(mushroom)}
         />
       </div>
       <button

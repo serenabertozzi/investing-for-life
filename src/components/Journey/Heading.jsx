@@ -1,5 +1,5 @@
 import React from "react";
-import useCharacter from "../../hooks/useCharacter";
+import { useCharacter } from "../../hooks/useCharacter";
 import { Counter } from "./Counter";
 
 export const Heading = ({ text, title }) => {

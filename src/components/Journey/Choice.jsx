@@ -1,11 +1,12 @@
 export const Choice = ({ answers, handleNextStep }) => {
+
   return (
     <>
       {answers.map((answer, index) => (
         <button
           className="bg-white rounded-full text-dark-green p-6 m-4"
           key={index}
-          onClick={() => handleNextStep({ heading: answer.heading, text: answer.text })}
+          onClick={() => handleNextStep({ heading: answer.heading, text: answer.text, points: answer.points })}
         >
           <div className="flex flex-col items-center">
             <div className="text-4xl">{answer.emoji}</div>

@@ -1,5 +1,5 @@
 import React from "react";
-import useCharacter from "../../hooks/useCharacter";
+import { useCharacter } from "../../hooks/useCharacter";
 import city from '../../assets/backgrounds/city.png';
 import wood from '../../assets/backgrounds/wood.png';
 import room from '../../assets/backgrounds/room.png';

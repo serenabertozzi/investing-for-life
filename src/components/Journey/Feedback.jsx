@@ -17,6 +17,8 @@ export const Feedback = () => {
     }
   };
 
+  const isLastStep = step === journeySteps.length - 1;
+
   return (
     <>
       <Heading text={title} />
@@ -26,7 +28,7 @@ export const Feedback = () => {
           className="bg-[#0C333B] rounded-full text-white p-4 px-8 font-semibold"
           onClick={handleNextStep}
         >
-          Next Step
+          {isLastStep ? "Play Again" : "Next Step"}
         </button>
         <Counter />
       </div>
