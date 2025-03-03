@@ -5,6 +5,7 @@ import bee from '../assets/bee.png';
 import sheep from '../assets/sheep.png';
 import boy from '../assets/boy.png';
 import mushroom from '../assets/mushroom.png';
+import swLogo from '../assets/swlogo.png';
 
 import useCharacter from "../hooks/useCharacter";
 
@@ -14,6 +15,7 @@ export const Home = () => {
 
   return (
     <div className="flex flex-col items-center gap-12 justify-center h-screen">
+      <img style={{ width: "400px" }} src={swLogo} alt="SW Logo" className="mb-10" /> 
       <hi className="text-dark-green font-semibold text-6xl mb-10">Investing for life</hi>
       <h2 className="text-dark-green font-bold text-2xl">Choose your avatar: </h2>
       {selectedAvatar && <p className="underline">{selectedAvatar}</p>}
