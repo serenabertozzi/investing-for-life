@@ -3,6 +3,7 @@ import { Heading } from "./Heading";
 import { HeroBanner } from "./HeroBanner";
 import { journeySteps } from "../../steps";
 import { useNavigate, useLocation } from "react-router-dom";
+import { Counter } from "./Counter";
 
 export const Journey = () => {
   const location = useLocation();
@@ -13,15 +14,24 @@ export const Journey = () => {
   const handleNextStep = (selectedValue) => {
     if (currentStep < journeySteps.length - 1) {
       setCurrentStep(currentStep + 1);
-      navigate("/feedback", { state: { title: journeySteps[currentStep].chapter, text: selectedValue, step: currentStep } });
+      navigate("/feedback", {
+        state: {
+          title: journeySteps[currentStep].chapter,
+          text: selectedValue,
+          step: currentStep,
+        },
+      });
     } else if (currentStep === journeySteps.length - 1) {
-      navigate("/feedback", { state: { title: "end", text: selectedValue, step: currentStep } });
-    }  };
+      navigate("/feedback", {
+        state: { title: "end", text: selectedValue, step: currentStep },
+      });
+    }
+  };
 
   const { chapter, title, question, answers } = journeySteps[currentStep];
 
   console.log(journeySteps[currentStep]);
-  
+
   return (
 <>
       <Heading text={chapter} title={title} />
@@ -35,6 +45,7 @@ export const Journey = () => {
           </button>
         ))}
       </div>
+      <Counter />
     </div>
     </>
   );
