@@ -13,11 +13,11 @@ export const Home = () => {
   const { selectedAvatar, setSelectedAvatar } = useCharacter();
 
   return (
-    <div className="flex justify-center">
-      <h1>Choose your avatar: </h1>
+    <div className="flex flex-col items-center gap-12 justify-center h-screen">
+      <hi>Investing for life</hi>
+      <h2>Choose your avatar: </h2>
       {selectedAvatar && <p className="underline">{selectedAvatar}</p>}
-      <div>
-        <h2>Select Your Avatar</h2>
+      <div className="flex gap-8">
         <img style={{ width: "100px" }} src={girlFlower} alt="girlFlower" onClick={() => setSelectedAvatar(girlFlower)} />
         <img style={{ width: "100px" }} src={girlCherry} alt="girlCherry" onClick={() => setSelectedAvatar(girlCherry)} />
         <img style={{ width: "100px" }} src={bee} alt="bee" onClick={() => setSelectedAvatar(bee)} />
