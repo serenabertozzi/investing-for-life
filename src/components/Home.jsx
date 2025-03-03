@@ -5,7 +5,7 @@ import bee from '../assets/avatars/bee.png';
 import sheep from '../assets/avatars/sheep.png';
 import boy from '../assets/avatars/boy.png';
 import mushroom from '../assets/avatars/mushroom.png';
-
+import swLogo from '../assets/swLogo.png';
 import useCharacter from "../hooks/useCharacter";
 
 export const Home = () => {
@@ -14,8 +14,9 @@ export const Home = () => {
 
   return (
     <div className="flex flex-col items-center gap-12 justify-center h-screen">
-      <img style={{ width: "400px" }} src={swLogo} alt="SW Logo" className="mb-10" /> 
-      <hi className="text-dark-green font-semibold text-6xl mb-10">Investing for life</hi>
+      <div className="flex flex-col items-center gap-4">     
+        <img className="w-56" src={swLogo} alt="SW Logo" /> 
+      <hi className="text-dark-green font-semibold text-6xl mb-10">Investing for life</hi></div>
       <h2 className="text-dark-green font-bold text-2xl">Choose your avatar: </h2>
       {selectedAvatar && <p className="underline">{selectedAvatar}</p>}
       <div className="flex gap-20 bg-white rounded-full p-8">

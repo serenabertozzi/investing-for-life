@@ -1,19 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import { Heading } from "./Heading";
-import { Question } from "./Question";
-import { useNavigate } from "react-router-dom";
+import { journeySteps } from "../../steps";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export const Journey = () => {
-  const text = "Chapter 1";
-  const question = "Question 1";
-  const a1 = "answer 1";
-  const a2 = "answer 2";
-  const a3 = "answer 3";
+  const location = useLocation();
+  const initialStep = location.state?.step || 0;
+  const [currentStep, setCurrentStep] = useState(initialStep);
+  const navigate = useNavigate();
 
+  const handleNextStep = (selectedValue) => {
+    if (currentStep < journeySteps.length - 1) {
+      setCurrentStep(currentStep + 1);
+      navigate("/feedback", { state: { title: journeySteps[currentStep].chapter, text: selectedValue, step: currentStep } });
+    } else if (currentStep === journeySteps.length - 1) {
+      navigate("/feedback", { state: { title: "end", text: selectedValue, step: currentStep } });
+    }  };
+
+  const { chapter, question, answers } = journeySteps[currentStep];
+
+  console.log(journeySteps[currentStep]);
+  
   return (
-    <>
-      <Heading text={text} />
-      <Question question={question} a1={a1} a2={a2} a3={a3} />
-    </>
+    <div className="flex flex-col items-center gap-12 justify-center h-screen">
+      <Heading text={chapter} />
+      <h2>{question}</h2>
+      <div className="flex flex-col items-center p-8">
+        {answers.map((answer, index) => (
+          <button key={index} onClick={() => handleNextStep(answer)}>
+            {answer}
+          </button>
+        ))}
+      </div>
+    </div>
   );
 };
