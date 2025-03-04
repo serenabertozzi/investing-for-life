@@ -1,4 +1,4 @@
-import useCharacter from "../hooks/useCharacter";
+import { useCharacter } from "../../hooks/useCharacter";
 
 export const MainCharacter = () => {
   const { selectedAvatar } = useCharacter();

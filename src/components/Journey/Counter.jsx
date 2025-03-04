@@ -1,19 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import star from '../../assets/star.png';
-
+import { usePoints } from '../../hooks/usePoints';
 
 export const Counter = () => {
 
-  const [points, setPoints] = useState(0);
+  const { totalPoints } = usePoints();
 
   // eslint-disable-next-line
-  const incrementPoints = (addedAmount) => {
-    setPoints(points + addedAmount);
-  }
 
   return (
-    <>  
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
           <div style={{
             display: "flex",
             alignItems: "center",
@@ -23,9 +18,7 @@ export const Counter = () => {
             boxShadow: "0 4px 8px #fbfbfb"
           }}>
             <img style={{ width: "50px" }} src={star} alt="star" />
-            <p style={{ marginLeft: "20px" }}>{points} points</p>
+            <p style={{ marginLeft: "20px" }}>{totalPoints}</p>
           </div>
-        </div>
-    </>
-  );
+          )
 };

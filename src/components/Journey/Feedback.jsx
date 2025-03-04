@@ -2,12 +2,11 @@ import React from "react";
 import { Heading } from "./Heading";
 import { journeySteps } from "../../steps";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Counter } from "./Counter";
 
 export const Feedback = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { title, text, step } = location.state;
+  const { title, step, outcome, lesson, tip, linkText, url, points, add } = location.state;
 
   const handleNextStep = () => {
     if (step + 1 < journeySteps.length) {
@@ -16,17 +15,29 @@ export const Feedback = () => {
       navigate("/");
     }
   };
+  
+  const isLastStep = step === journeySteps.length - 1;
+
+  const winOrLose = add ? `🎉 You have gained ${points} SW Coins!` : `😢 You lost  ${points} SW Coins!`;
+
   return (
-    <div className="flex flex-col items-center gap-12 justify-center h-screen">
+    <>
       <Heading text={title} />
-      <p>{text}</p>
-      <button
-        className="bg-[#0C333B] rounded-full text-white p-4 px-8 font-semibold"
-        onClick={handleNextStep}
-      >
-        Next Step
-      </button>
-      <Counter />
-    </div>
+      <div className="flex flex-col items-center gap-12 justify-center1 h-screen">
+        <div className="flex flex-col items-center bg-white w-[50%] rounded-lg p-8 mt-[8rem] gap-8">
+        <p className="text-2xl font-semibold">{winOrLose}</p>
+        <h3 className="text-2xl font-semibold">{`🔹 ${outcome}`}</h3>
+        <p className="text-lg">{`💡  ${lesson}`}</p>
+        <span className="flex items-center gap-1">
+        <p className="text-lg ">{`📖  ${tip}`}</p><a className="font-bold text-lg" href={{url}}>{linkText}</a></span>
+        </div>
+        <button
+          className="bg-[#0C333B] rounded-full text-white p-4 px-8 font-semibold"
+          onClick={handleNextStep}
+        >
+          {isLastStep ? "Play Again" : "Next Step"}
+        </button>
+      </div>
+    </>
   );
 };
