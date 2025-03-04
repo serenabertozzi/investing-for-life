@@ -6,36 +6,18 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { Choice } from "./Choice";
 import { usePoints } from '../../hooks/usePoints';
 
-
 export const Journey = () => {
   const location = useLocation();
   const initialStep = location.state?.step || 0;
   const [currentStep, setCurrentStep] = useState(initialStep);
   const navigate = useNavigate();
 
-  const { totalPoints, setTotalPoints } = usePoints();
+  const { setTotalPoints } = usePoints();
 
-  
-
-  const updatePoints = (addedAmount, add, feedback) => {
-    console.log('before: ', totalPoints);
+  const updatePoints = (addedAmount, add, feedback, image) => {
 
     setTotalPoints(prevPoints => {
       const newPoints = add ? prevPoints + addedAmount : prevPoints - addedAmount;
-
-      if (newPoints <= 0) {
-        navigate("/feedback", {
-          state: {
-            title: "Game Over",
-            step: currentStep,
-            outcome: "You have run out of points.",
-            lesson: "Try to manage your points better next time.",
-            tip: "Consider making different choices to maintain your points.",
-            points: addedAmount,
-            add: false,
-          },
-        });
-      } else {
         if (currentStep < journeySteps.length - 1) {
           setCurrentStep(currentStep + 1);
           navigate("/feedback", {
@@ -47,30 +29,28 @@ export const Journey = () => {
               tip: feedback.tip,
               points: addedAmount,
               add: add,
+              question: journeySteps[currentStep].question,
+              image: image, 
+              linkText: feedback.linkText,
+              url: feedback.url,
             },
           });
         } else {
           navigate("/feedback", {
             state: {
-              title:"Well done!",
+              title: "Your financial profile",
               step: currentStep,
-              outcome: "You have completed the game!",
-              lesson: "You have successfully managed your points.",
-              tip: "Continue to learn about investing",
               points: addedAmount,
-              add: add,
+              add: add, 
             },
           });
         }
-      }
-
       return newPoints;
     });
   };
 
-
-  const handleNextStep = ({ points, add, feedback }) => {
-    updatePoints(points, add, feedback);
+  const handleNextStep = ({ points, add, feedback, image }) => {
+    updatePoints(points, add, feedback, image);
 
     if (currentStep < journeySteps.length - 1) {
       setCurrentStep(currentStep + 1);
@@ -85,6 +65,9 @@ export const Journey = () => {
           url: feedback.url,
           points: points,
           add: add,
+          question: journeySteps[currentStep].question,
+          chapter: journeySteps[currentStep].chapter,
+          image: image, 
         },
       });
     } else if (currentStep === journeySteps.length - 1) {
