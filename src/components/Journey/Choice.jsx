@@ -1,4 +1,16 @@
+import React from "react";
+
 export const Choice = ({ answers, handleNextStep }) => {
+  const handleChoice = (answer) => {
+    handleNextStep({
+      heading: answer.heading,
+      text: answer.text,
+      points: answer.points,
+      add: answer.add,
+      feedback: answer.feedback,
+      image: answer.image, 
+    });
+  };
 
   return (
     <>
@@ -6,7 +18,7 @@ export const Choice = ({ answers, handleNextStep }) => {
         <button
           className="bg-white rounded-full text-dark-green p-6 m-4"
           key={index}
-          onClick={() => handleNextStep({ heading: answer.heading, text: answer.text, points: answer.points, add: answer.add, feedback: answer.feedback })}
+          onClick={() => handleChoice(answer)}
         >
           <div className="flex flex-col items-center">
             <div className="text-4xl">{answer.emoji}</div>
