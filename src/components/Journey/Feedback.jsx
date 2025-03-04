@@ -15,6 +15,10 @@ export const Feedback = () => {
       navigate("/");
     }
   };
+
+  console.log({linkText});
+  console.log({url});
+  
   
   const isLastStep = step === journeySteps.length - 1;
 
@@ -29,7 +33,7 @@ export const Feedback = () => {
         <h3 className="text-2xl font-semibold">{`🔹 ${outcome}`}</h3>
         <p className="text-lg">{`💡  ${lesson}`}</p>
         <span className="flex items-center gap-1">
-        <p className="text-lg ">{`📖  ${tip}`}</p><a className="font-bold text-lg" href={{url}}>{linkText}</a></span>
+        <p className="text-lg ">{`📖  ${tip}`}</p><a className="font-bold text-lg" href={url} target="_blank" rel="noopener noreferrer">{linkText}</a></span>
         </div>
         <button
           className="bg-[#0C333B] rounded-full text-white p-4 px-8 font-semibold"
