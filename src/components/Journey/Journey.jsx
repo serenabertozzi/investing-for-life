@@ -13,13 +13,9 @@ export const Journey = () => {
   const [currentStep, setCurrentStep] = useState(initialStep);
   const navigate = useNavigate();
 
-  const { totalPoints, setTotalPoints } = usePoints();
-
-  
+  const { setTotalPoints } = usePoints();
 
   const updatePoints = (addedAmount, add, feedback) => {
-    console.log('before: ', totalPoints);
-
     setTotalPoints(prevPoints => {
       const newPoints = add ? prevPoints + addedAmount : prevPoints - addedAmount;
 
@@ -47,6 +43,8 @@ export const Journey = () => {
               tip: feedback.tip,
               points: addedAmount,
               add: add,
+              linkText: feedback.linkText,
+              url: feedback.url,
             },
           });
         } else {
@@ -71,27 +69,6 @@ export const Journey = () => {
 
   const handleNextStep = ({ points, add, feedback }) => {
     updatePoints(points, add, feedback);
-
-    if (currentStep < journeySteps.length - 1) {
-      setCurrentStep(currentStep + 1);
-      navigate("/feedback", {
-        state: {
-          title: journeySteps[currentStep].chapter,
-          step: currentStep,
-          outcome: feedback.outcome,
-          lesson: feedback.lesson,
-          tip: feedback.tip,
-          linkText: feedback.linkText,
-          url: feedback.url,
-          points: points,
-          add: add,
-        },
-      });
-    } else if (currentStep === journeySteps.length - 1) {
-      navigate("/feedback", {
-        state: { title: "Game Over", step: currentStep },
-      });
-    }
   };
 
   const { chapter, title, question, answers } = journeySteps[currentStep];
