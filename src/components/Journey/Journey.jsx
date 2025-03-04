@@ -5,6 +5,8 @@ import { journeySteps } from "../../steps";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Choice } from "./Choice";
 import { usePoints } from '../../hooks/usePoints';
+import { Footer } from "../Footer";
+import swLogo from "../../assets/swlogo.png";
 
 export const Journey = () => {
   const location = useLocation();
@@ -81,9 +83,9 @@ export const Journey = () => {
 
   return (
     <>
-      <Heading text={chapter} title={title} />
+      <Heading text={chapter} title={title} image= {swLogo}/>
       <HeroBanner question={question} chapter={chapter} />
-      <div className="flex flex-col items-center justify-center mt-16">
+      <div className="flex flex-col items-center justify-center my-8">
         <div className="flex justify-center items-center">
           <Choice answers={answers} handleNextStep={handleNextStep} />
         </div>
