@@ -15,30 +15,12 @@ export const Journey = () => {
   const [currentStep, setCurrentStep] = useState(initialStep);
   const navigate = useNavigate();
 
-  const { totalPoints, setTotalPoints } = usePoints();
+  const { setTotalPoints } = usePoints();
 
   const updatePoints = (addedAmount, add, feedback, image) => {
-    console.log('before: ', totalPoints);
 
     setTotalPoints(prevPoints => {
       const newPoints = add ? prevPoints + addedAmount : prevPoints - addedAmount;
-
-      if (newPoints <= 0) {
-        navigate("/feedback", {
-          state: {
-            title: "Game Over",
-            step: currentStep,
-            outcome: "You have run out of points.",
-            lesson: "Try to manage your points better next time.",
-            tip: "Consider making different choices to maintain your points.",
-            points: addedAmount,
-            add: false,
-            question: journeySteps[currentStep].question,
-            chapter: journeySteps[currentStep].chapter,
-            image: image, 
-          },
-        });
-      } else {
         if (currentStep < journeySteps.length - 1) {
           setCurrentStep(currentStep + 1);
           navigate("/feedback", {
@@ -51,28 +33,21 @@ export const Journey = () => {
               points: addedAmount,
               add: add,
               question: journeySteps[currentStep].question,
-              chapter: journeySteps[currentStep].chapter,
               image: image, 
+              linkText: feedback.linkText,
+              url: feedback.url,
             },
           });
         } else {
           navigate("/feedback", {
             state: {
-              title:"Well done!",
+              title: "Your financial profile",
               step: currentStep,
-              outcome: "You have completed the game!",
-              lesson: "You have successfully managed your points.",
-              tip: "Continue to learn about investing",
               points: addedAmount,
-              add: add,
-              question: journeySteps[currentStep].question,
-              chapter: journeySteps[currentStep].chapter,
-              image: image, 
+              add: add, 
             },
           });
         }
-      }
-
       return newPoints;
     });
   };

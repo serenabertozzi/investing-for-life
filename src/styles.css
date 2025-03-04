@@ -12,6 +12,7 @@
   border: 5px solid #14525e;
   border-radius: 50%;
 }
+<<<<<<< HEAD
 
 .fade-in {
   animation: fadeIn 1s ease-in-out;
@@ -25,3 +26,30 @@
     opacity: 1;
   }
 }
+=======
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.typewriter-box {
+  background-color: rgba(255, 255, 255, 0.5); /* Transparent box */
+  padding: 20px; /* Padding inside the box */
+  border-radius: 10px; /* Rounded corners */
+  font-family: 'Courier New', Courier, monospace;
+  white-space: pre-wrap;
+  border: 2px solid #000; /* Border around the text */
+  margin: 0 20%; /* Margin to leave 30% on each side */
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+>>>>>>> main

@@ -30,9 +30,9 @@ export const Home = () => {
     <div className="flex flex-col items-center gap-12 justify-center h-screen">
       <div className="flex flex-col items-center gap-4">
         <img className="w-56" src={swLogo} alt="SW Logo" />
-        <hi className="text-dark-green font-semibold text-6xl mb-10">
+        <h1 className="text-dark-green font-semibold text-6xl mb-10">
           Investing for Life
-        </hi>
+        </h1>
       </div>
       <h2 className="text-dark-green font-bold text-2xl">
         Choose your avatar:
@@ -83,7 +83,7 @@ export const Home = () => {
       </div>
       <button
         className="bg-[#0C333B] rounded-full text-white p-4 px-8 font-semibold"
-        onClick={() => navigate("/journey")}
+        onClick={() => navigate("/intro")}
       >
         Start Here
       </button>

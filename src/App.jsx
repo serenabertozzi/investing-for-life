@@ -6,6 +6,7 @@ import { CharacterAvatarProvider } from "./context/CharacterAvatarContext";
 import { PointsProvider } from "./context/PointsContext";
 import { Journey } from "./components/Journey/Journey";
 import { Feedback } from "./components/Journey/Feedback";
+import { Intro } from "./components/Journey/Intro"
 
 export const App = () => {
   return (
@@ -14,6 +15,7 @@ export const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path={"/"} element={<Home />} />
+          <Route path={"/intro"} element={<Intro />} /> 
           <Route path={"/quiz"} element={<Quiz />} />
           <Route path={"/journey"} element={<Journey />} />
           <Route path={"/feedback"} element={<Feedback />} />
