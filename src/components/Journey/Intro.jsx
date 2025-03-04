@@ -24,20 +24,39 @@ export const Typewriter = ({ text, onComplete }) => {
 export const Intro = () => {
   const navigate = useNavigate();
   const [showButton, setShowButton] = useState(false);
+  const [skip, setSkip] = useState(false);
+
+  useEffect(() => {
+    return () => {
+      setSkip(false);
+    };
+  }, []);
+
+  const handleSkip = () => {
+    setSkip(true);
+    setShowButton(true);
+  }
 
   const fullText = `You did it! After years of studying, you’ve landed your first full-time job, and life is finally beginning 🚀.
 
-And now, the moment you’ve been waiting for, your first paycheck has just dropped into your bank account 💸. 
+    And now, the moment you’ve been waiting for, your first paycheck has just dropped into your bank account 💸. 
 
-You now have a choice to make... you could save it, invest it, or finally treat yourself. 
+    You now have a choice to make... you could save it, invest it, or finally treat yourself. 
 
- ❗But hold on, this is just the beginning. Every financial decision you make today will shape your future. 
+    ❗But hold on, this is just the beginning. Every financial decision you make today will shape your future. 
 
-Will you play it safe, take risks, or find the perfect balance?`;
+    Will you play it safe, take risks, or find the perfect balance?`;
 
   return (
     <div className="box">
-      <Typewriter text={fullText} onComplete={() => setShowButton(true)} />
+      {!skip && <button onClick={() => handleSkip()} className="bg-[#0C333B] rounded-full text-white p-4 px-8 font-semibold absolute bottom-10 left-1/2 transform -translate-x-1/2">
+        Fast Forward
+      </button>
+      }  
+
+      {skip ? (<><div className="typewriter-box text-dark-green font-bold text-2xl" style={{ fontFamily: 'Rubik, sans-serif' }}>{fullText}</div></>) : 
+      (<Typewriter text={fullText} onComplete={() => setShowButton(true)} />)}
+        
       {showButton && (
         <button
           className="bg-[#0C333B] rounded-full text-white p-4 px-8 font-semibold center-button mt-10"

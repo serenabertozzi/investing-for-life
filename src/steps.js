@@ -136,7 +136,7 @@ export const journeySteps = [
         points: 10,
         add: false,
         feedback: {
-          outcome: "",
+          outcome: "Selling when prices drop locks in your losses!",
           lesson: "Selling during a market crash turns a temporary paper loss into a real loss, preventing you from benefiting when the market recovers over time.",
           tip: "Understanding Risk & Emotional Investing:",
           linkText: "What is investing?",
