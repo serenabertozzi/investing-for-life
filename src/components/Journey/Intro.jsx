@@ -28,7 +28,7 @@ export const Intro = () => {
   const [skip, setSkip] = useState(false);
 
   const { selectedAvatar } = useCharacter();
-
+  
   useEffect(() => {
     return () => {
       setSkip(false);
@@ -56,7 +56,8 @@ export const Intro = () => {
         <img className="w-[80px] h-[80px]" src={selectedAvatar} alt="Avatar" /> 
 
     <div className="box height-screen mb-8 w-[100%]">
-      {!skip && <button onClick={() => handleSkip()} className="bg-[#0C333B] rounded-full text-white p-4 px-8 font-semibold absolute bottom-50 left-1/2 transform -translate-x-1/2">
+      {!skip && <button onClick={() => handleSkip()} 
+      className="bg-[#0C333B] rounded-full text-white p-4 px-8 font-semibold absolute bottom-[90px] left-1/2 transform -translate-x-1/2">
         Fast Forward
       </button>
       }  
