@@ -39,7 +39,7 @@ export const Feedback = () => {
   const [playLose] = useSound(lose);
 
   useEffect(() => {
-    add ? playWin() : playLose();
+    !isLastStep && (add ? playWin() : playLose());
   }, [playWin]);
 
   const calculateEndings = (totalPoints) => {
