@@ -1,6 +1,5 @@
 import React from "react";
 import { Heading } from "./Heading";
-import { HeroBanner } from "./HeroBanner";
 import { journeySteps } from "../../steps";
 import { useLocation, useNavigate } from "react-router-dom";
 import room from '../../assets/backgrounds/room.png';
