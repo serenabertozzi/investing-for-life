@@ -49,7 +49,8 @@ export const Intro = () => {
 
   return (
     <div className="box">
-      {!skip && <button onClick={() => handleSkip()} className="bg-[#0C333B] rounded-full text-white p-4 px-8 font-semibold absolute bottom-10 left-1/2 transform -translate-x-1/2">
+      {!skip && <button onClick={() => handleSkip()} className="bg-[#0C333B] rounded-full text-white p-4 px-8 font-semibold absolute bottom-10 left-1/2 transform -translate-x-1/2"
+          >
         Fast Forward
       </button>
       }  
