@@ -15,16 +15,17 @@ export const Journey = () => {
 
   const { totalPoints, setTotalPoints } = usePoints();
 
-  const incrementPoints = (addedAmount) => {
-    setTotalPoints(totalPoints + addedAmount);
+  console.log('after: ',totalPoints);
+
+
+  const updatePoints = (addedAmount, add) => {
+    console.log('before: ',totalPoints);
+
+    add ? setTotalPoints(totalPoints + addedAmount) : setTotalPoints(totalPoints - addedAmount);    
   }
 
   const handleNextStep = ({ points, add, feedback }) => {
-    add ? incrementPoints(totalPoints + points) : incrementPoints(totalPoints - points);
-
-    console.log({ feedback });
-
-
+    updatePoints(points, add);
     if (currentStep < journeySteps.length - 1) {
       setCurrentStep(currentStep + 1);
       navigate("/feedback", {

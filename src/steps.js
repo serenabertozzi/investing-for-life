@@ -108,7 +108,7 @@ export const journeySteps = [
         url: "https://www.scottishwidows.co.uk/investments/options.html"} },
       { emoji: "🕰 ", heading: "Delay investing for retirement ", 
         text: "(Waiting makes it harder later!)", 
-        points: 5, add: true, 
+        points: 5, add: false, 
         feedback: {outcome: "The later you start, the harder it is to save!", 
           lesson: "The earlier you start saving for retirement, the less you need to save each month, thanks to the power of compound interest working over decades.", 
           tip: "Why Starting Early Matters:", 

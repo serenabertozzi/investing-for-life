@@ -2,7 +2,6 @@ import React from "react";
 import { Heading } from "./Heading";
 import { journeySteps } from "../../steps";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Counter } from "./Counter";
 
 export const Feedback = () => {
   const location = useLocation();
