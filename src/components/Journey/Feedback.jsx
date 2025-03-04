@@ -4,6 +4,12 @@ import { journeySteps, endings } from "../../steps";
 import { useLocation, useNavigate } from "react-router-dom";
 import { usePoints } from '../../hooks/usePoints';
 
+import guru from '../../assets/endings/guru.png';
+import balance from '../../assets/endings/balance.png';
+import learning from '../../assets/endings/learning.png';
+import piggy from '../../assets/endings/piggy.png';
+import broke from '../../assets/endings/broke.png';
+
 export const Feedback = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -18,23 +24,39 @@ export const Feedback = () => {
     }
   };
 
+  // const calculateEndings = (totalPoints) => {
+  //   switch (true) {
+  //     case totalPoints >= 100:
+  //       return endings[0];
+  //     case totalPoints >= 80:
+  //       return endings[1];
+  //     case totalPoints >= 50:
+  //       return endings[2];
+  //     case totalPoints >= 20:
+  //       return endings[3];
+  //     default:
+  //       return endings[4];
+  //   }
+  // };
+
   const calculateEndings = (totalPoints) => {
     switch (true) {
       case totalPoints >= 100:
-        return endings[0];
+        return { ...endings[0], icon: guru };
       case totalPoints >= 80:
-        return endings[1];
+        return { ...endings[1], icon: balance };
       case totalPoints >= 50:
-        return endings[2];
+        return { ...endings[2], icon: learning };
       case totalPoints >= 20:
-        return endings[3];
+        return { ...endings[3], icon: piggy };
       default:
-        return endings[4];
+        return { ...endings[4], icon: broke };
     }
   };
 
   const isLastStep = step === journeySteps.length - 1;
-  const endingText = isLastStep ? calculateEndings(totalPoints) : null;
+  const ending = isLastStep ? calculateEndings(totalPoints) : null;
+
   const winOrLose = add ? `🎉 You have gained ${points} SW Coins!` : `😢 You lost  ${points} SW Coins!`;
 
   return (
@@ -43,9 +65,9 @@ export const Feedback = () => {
       <div className="flex flex-col items-center gap-12 justify-center h-screen">
         {isLastStep ? (
           <div className="flex flex-col items-center bg-white w-[50%] rounded-lg p-8 mt-[8rem] gap-8">
-            <p className="text-2xl font-semibold">{endingText.investorType}</p>
-            <h3 className="text-2xl font-semibold">{`🔹 ${endingText.endStory}`}</h3>
-            <p className="text-lg">{`💡  ${lesson}`}</p>
+            <img className="w-40" src={ending.icon} alt={ending.icon} />
+            <p className="text-2xl font-semibold">{ending.investorType}</p>
+            <h3 className="text-xl">{ending.endStory}</h3>
           </div>
         ) : (
           <div className="flex flex-col items-center bg-white w-[50%] rounded-lg p-8 mt-[8rem] gap-8">
