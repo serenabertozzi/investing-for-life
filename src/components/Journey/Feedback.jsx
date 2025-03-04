@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Heading } from "./Heading";
 import { journeySteps, endings } from "../../steps";
 import { useLocation, useNavigate } from "react-router-dom";
 import { usePoints } from '../../hooks/usePoints';
+import useSound from 'use-sound';
+import win from '../../assets/win.mp3';
+import lose from '../../assets/lose.mp3';
 
 import guru from '../../assets/endings/guru.png';
 import balance from '../../assets/endings/balance.png';
@@ -26,11 +29,18 @@ export const Feedback = () => {
 
   const handleNextStep = () => {
     if (step + 1 < journeySteps.length) {
-      navigate("/journey", { state: { step: step + 1 } });
+      navigate('/journey', { state: { step: step + 1 } });
     } else {
-      navigate("/");
+      navigate('/');
     }
   };
+
+  const [playWin] = useSound(win);
+  const [playLose] = useSound(lose);
+
+  useEffect(() => {
+    add ? playWin() : playLose();
+  }, [playWin]);
 
   const calculateEndings = (totalPoints) => {
     switch (true) {
@@ -52,7 +62,9 @@ export const Feedback = () => {
 
   const chapter = journeySteps[step].chapter;
 
-  const winOrLose = add ? `🎉 You have gained ${points} SW Coins!` : `😢 You lost  ${points} SW Coins!`;
+  const winOrLose = add
+    ? `🎉 You have gained ${points} SW Coins!`
+    : `😢 You lost  ${points} SW Coins!`;
 
   const chooseBackground = () => {
     switch (chapter) {
