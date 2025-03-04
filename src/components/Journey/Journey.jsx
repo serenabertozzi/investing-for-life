@@ -32,7 +32,7 @@ export const Journey = () => {
             add: false,
             question: journeySteps[currentStep].question,
             chapter: journeySteps[currentStep].chapter,
-            image: image, // Pass the image property
+            image: image, 
           },
         });
       } else {
@@ -49,7 +49,7 @@ export const Journey = () => {
               add: add,
               question: journeySteps[currentStep].question,
               chapter: journeySteps[currentStep].chapter,
-              image: image, // Pass the image property
+              image: image, 
             },
           });
         } else {
@@ -64,7 +64,7 @@ export const Journey = () => {
               add: add,
               question: journeySteps[currentStep].question,
               chapter: journeySteps[currentStep].chapter,
-              image: image, // Pass the image property
+              image: image, 
             },
           });
         }
@@ -92,7 +92,7 @@ export const Journey = () => {
           add: add,
           question: journeySteps[currentStep].question,
           chapter: journeySteps[currentStep].chapter,
-          image: image, // Pass the image property
+          image: image, 
         },
       });
     } else if (currentStep === journeySteps.length - 1) {
