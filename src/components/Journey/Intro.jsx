@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useCharacter } from "../../hooks/useCharacter";
 import { useNavigate } from "react-router-dom";
 
 export const Typewriter = ({ text, onComplete }) => {
@@ -26,6 +27,8 @@ export const Intro = () => {
   const [showButton, setShowButton] = useState(false);
   const [skip, setSkip] = useState(false);
 
+  const { selectedAvatar } = useCharacter();
+  
   useEffect(() => {
     return () => {
       setSkip(false);
@@ -48,9 +51,13 @@ export const Intro = () => {
     Will you play it safe, take risks, or find the perfect balance?`;
 
   return (
-    <div className="box">
-      {!skip && <button onClick={() => handleSkip()} className="bg-[#0C333B] rounded-full text-white p-4 px-8 font-semibold absolute bottom-10 left-1/2 transform -translate-x-1/2"
-          >
+    
+    <div className='flex flex-col items-center mt-10'>
+        <img className="w-[80px] h-[80px]" src={selectedAvatar} alt="Avatar" /> 
+
+    <div className="box height-screen mb-8 w-[100%]">
+      {!skip && <button onClick={() => handleSkip()} 
+      className="bg-[#0C333B] rounded-full text-white p-4 px-8 font-semibold absolute bottom-[90px] left-1/2 transform -translate-x-1/2">
         Fast Forward
       </button>
       }  
@@ -60,12 +67,13 @@ export const Intro = () => {
         
       {showButton && (
         <button
-          className="bg-[#0C333B] rounded-full text-white p-4 px-8 font-semibold center-button mt-10"
+          className="bg-[#0C333B] rounded-full text-white p-4 px-8 font-semibold center-button mt-4"
           onClick={() => navigate("/journey")}
         >
           Let's find out...
         </button>
       )}
+    </div>
     </div>
   );
 };

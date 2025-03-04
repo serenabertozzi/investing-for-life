@@ -20,6 +20,7 @@ export const Journey = () => {
 
     setTotalPoints(prevPoints => {
       const newPoints = add ? prevPoints + addedAmount : prevPoints - addedAmount;
+      
         if (currentStep < journeySteps.length - 1) {
           setCurrentStep(currentStep + 1);
           navigate("/feedback", {
