@@ -8,6 +8,7 @@ import edinburgh from '../../assets/backgrounds/edinburgh.png';
 import leeds from '../../assets/backgrounds/leeds.png';
 import london from '../../assets/backgrounds/london.png';
 import town from '../../assets/backgrounds/town.png';
+import crying from '../../assets/emotions/crying.png';
 
 export const Feedback = () => {
   const location = useLocation();
@@ -25,12 +26,12 @@ export const Feedback = () => {
   console.log({linkText});
   console.log({url});
   
-  
   const isLastStep = step === journeySteps.length - 1;
 
   const chapter = journeySteps[step].chapter;
 
   const winOrLose = add ? `🎉 You have gained ${points} SW Coins!` : `😢 You lost  ${points} SW Coins!`;
+  const displayImage = add ? image : crying; 
 
   const chooseBackground = () => {
     switch (chapter) {
@@ -53,8 +54,8 @@ export const Feedback = () => {
     <>
       <Heading text={title} />
       <div className="absolute inset-0 bg-cover bg-center h-[50rem] z-[-1]" style={chooseBackground()}></div>
-      <div className="flex flex-col items-center gap-12 justify-center h-screen">
-        <img src={image} alt="Feedback Emotion" className="w-24 h-24" />
+      <div className="flex flex-col items-center gap-12 justify-center h-screen">        
+        <img src={displayImage} alt="Feedback Emotion" className="w-24 h-24 fade-in" />
         <div className="flex flex-col items-center bg-white w-[50%] rounded-lg p-8 gap-4">
           <p className="text-2xl font-semibold">{winOrLose}</p>
           <h3 className="text-2xl font-semibold">{`🔹 ${outcome}`}</h3>
