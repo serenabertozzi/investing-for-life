@@ -9,6 +9,7 @@ import boy from "../assets/avatars/boy.png";
 import mushroom from "../assets/avatars/mushroom.png";
 import swLogo from "../assets/swlogo.png";
 import { useEffect, useState } from "react";
+import { Footer } from "./Footer";
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -86,6 +87,7 @@ export const Home = () => {
       >
         Start Here
       </button>
+      <Footer/>
     </div>
   );
 };

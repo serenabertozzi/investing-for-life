@@ -5,6 +5,7 @@ import { journeySteps } from "../../steps";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Choice } from "./Choice";
 import { usePoints } from '../../hooks/usePoints';
+import { Footer } from "../Footer";
 import swLogo from "../../assets/swlogo.png";
 
 
@@ -115,6 +116,7 @@ export const Journey = () => {
           <Choice answers={answers} handleNextStep={handleNextStep} />
         </div>
       </div>
+    <Footer/>
     </>
   );
 };

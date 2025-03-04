@@ -1,5 +1,6 @@
 import React from "react";
 import { Heading } from "./Heading";
+import { Footer } from "../Footer";
 import { journeySteps } from "../../steps";
 import { useLocation, useNavigate } from "react-router-dom";
 import room from '../../assets/backgrounds/room.png';
@@ -72,6 +73,7 @@ export const Feedback = () => {
           </button>
         </div>
       </div>
+    <Footer/>
     </>
   );
 };
