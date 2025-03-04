@@ -24,7 +24,7 @@ export const Feedback = () => {
   const [playLose] = useSound(lose);
 
   useEffect(() => {
-    !isLastStep && add ? playWin() : playLose();
+    !isLastStep && (add ? playWin() : playLose());
   }, [playWin]);
 
   const isLastStep = step === journeySteps.length - 1;
