@@ -6,7 +6,7 @@ export const Choice = ({ answers, handleNextStep }) => {
         <button
           className="bg-white rounded-full text-dark-green p-6 m-4"
           key={index}
-          onClick={() => handleNextStep({ heading: answer.heading, text: answer.text, points: answer.points })}
+          onClick={() => handleNextStep({ heading: answer.heading, text: answer.text, points: answer.points, add: answer.add, feedback: answer.feedback })}
         >
           <div className="flex flex-col items-center">
             <div className="text-4xl">{answer.emoji}</div>

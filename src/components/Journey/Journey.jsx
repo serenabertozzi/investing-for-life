@@ -19,8 +19,11 @@ export const Journey = () => {
     setTotalPoints(totalPoints + addedAmount);
   }
 
-  const handleNextStep = ({ heading, text, points }) => {
-    incrementPoints(totalPoints + points);
+  const handleNextStep = ({ points, add, feedback }) => {
+    add ? incrementPoints(totalPoints + points) : incrementPoints(totalPoints - points);
+
+    console.log({ feedback });
+
 
     if (currentStep < journeySteps.length - 1) {
       setCurrentStep(currentStep + 1);
@@ -28,6 +31,13 @@ export const Journey = () => {
         state: {
           title: journeySteps[currentStep].chapter,
           step: currentStep,
+          outcome: feedback.outcome,
+          lesson: feedback.lesson,
+          tip: feedback.tip,
+          linkText: feedback.linkText,
+          url: feedback.url,
+          points: points,
+          add: add,
         },
       });
     } else if (currentStep === journeySteps.length - 1) {

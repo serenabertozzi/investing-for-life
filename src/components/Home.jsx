@@ -86,7 +86,7 @@ export const Home = () => {
         className="bg-[#0C333B] rounded-full text-white p-4 px-8 font-semibold"
         onClick={() => navigate("/journey")}
       >
-        Start Quiz
+        Start Here
       </button>
     </div>
   );
