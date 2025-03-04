@@ -9,14 +9,12 @@ import boy from "../assets/avatars/boy.png";
 import mushroom from "../assets/avatars/mushroom.png";
 import swLogo from "../assets/swlogo.png";
 import { useEffect, useState } from "react";
+
 export const Home = () => {
   const navigate = useNavigate();
-  const {  setSelectedAvatar } = useCharacter();
-
+  const { setSelectedAvatar } = useCharacter();
   const { setTotalPoints } = usePoints();
-
   const [selectedCharacter, setSelectedCharacter] = useState(null);
-
 
   const handleAvatarClick = (avatar) => {
     setSelectedAvatar(avatar);
@@ -25,7 +23,7 @@ export const Home = () => {
 
   useEffect(() => {
     setTotalPoints(0);
-  }, [setTotalPoints])
+  }, [setTotalPoints]);
 
   return (
     <div className="flex flex-col items-center gap-12 justify-center h-screen">

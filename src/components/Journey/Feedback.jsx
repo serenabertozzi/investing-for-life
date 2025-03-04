@@ -22,6 +22,10 @@ export const Feedback = () => {
       navigate("/");
     }
   };
+
+  console.log({linkText});
+  console.log({url});
+  
   
   const isLastStep = step === journeySteps.length - 1;
 

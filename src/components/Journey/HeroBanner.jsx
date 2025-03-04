@@ -7,7 +7,7 @@ import leeds from '../../assets/backgrounds/leeds.png';
 import town from '../../assets/backgrounds/town.png';
 import bank from '../../assets/backgrounds/bank.png';
 //import city from '../../assets/backgrounds/city.png';
-// import wood from '../../assets/backgrounds/wood.png';
+//import wood from '../../assets/backgrounds/wood.png';
 
 export const HeroBanner = ({ question, chapter }) => {
   const { selectedAvatar } = useCharacter();
