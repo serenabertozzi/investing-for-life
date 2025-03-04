@@ -8,7 +8,6 @@ import { usePoints } from '../../hooks/usePoints';
 import { Footer } from "../Footer";
 import swLogo from "../../assets/swlogo.png";
 
-
 export const Journey = () => {
   const location = useLocation();
   const initialStep = location.state?.step || 0;
@@ -86,12 +85,11 @@ export const Journey = () => {
     <>
       <Heading text={chapter} title={title} image= {swLogo}/>
       <HeroBanner question={question} chapter={chapter} />
-      <div className="flex flex-col items-center justify-center mt-16">
+      <div className="flex flex-col items-center justify-center my-8">
         <div className="flex justify-center items-center">
           <Choice answers={answers} handleNextStep={handleNextStep} />
         </div>
       </div>
-    <Footer/>
     </>
   );
 };

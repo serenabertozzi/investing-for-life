@@ -28,7 +28,7 @@ export const Home = () => {
 
   return (
     <div className="flex flex-col items-center gap-12 justify-center h-screen">
-      <div className="flex flex-col items-center gap-4">
+      <div className="flex flex-col items-center gap-4 mt-20">
         <img className="w-56" src={swLogo} alt="SW Logo" />
         <h1 className="text-dark-green font-semibold text-6xl mb-10">
           Investing for Life

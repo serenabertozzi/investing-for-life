@@ -9,7 +9,7 @@ export const Heading = ({ text, title }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="relative flex items-center w-full bg-dark-green h-[10rem]">
+    <div className="relative flex items-center w-full bg-dark-green h-[8rem]">
       <img
         className="absolute left-5 top-1/2 transform -translate-y-1/2 w-[80px] h-[80px]"
         src={selectedAvatar}
