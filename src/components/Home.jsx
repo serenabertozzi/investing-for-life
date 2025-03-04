@@ -7,7 +7,7 @@ import bee from "../assets/avatars/bee.png";
 import sheep from "../assets/avatars/sheep.png";
 import boy from "../assets/avatars/boy.png";
 import mushroom from "../assets/avatars/mushroom.png";
-import swLogo from "../assets/swLogo.png";
+import swLogo from "../assets/swlogo.png";
 import { useEffect, useState } from "react";
 export const Home = () => {
   const navigate = useNavigate();
@@ -32,7 +32,7 @@ export const Home = () => {
       <div className="flex flex-col items-center gap-4">
         <img className="w-56" src={swLogo} alt="SW Logo" />
         <hi className="text-dark-green font-semibold text-6xl mb-10">
-          Investing for life
+          Investing for Life
         </hi>
       </div>
       <h2 className="text-dark-green font-bold text-2xl">

@@ -6,7 +6,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { Choice } from "./Choice";
 import { usePoints } from '../../hooks/usePoints';
 
-
 export const Journey = () => {
   const location = useLocation();
   const initialStep = location.state?.step || 0;
@@ -15,9 +14,7 @@ export const Journey = () => {
 
   const { totalPoints, setTotalPoints } = usePoints();
 
-  
-
-  const updatePoints = (addedAmount, add, feedback) => {
+  const updatePoints = (addedAmount, add, feedback, image) => {
     console.log('before: ', totalPoints);
 
     setTotalPoints(prevPoints => {
@@ -33,6 +30,9 @@ export const Journey = () => {
             tip: "Consider making different choices to maintain your points.",
             points: addedAmount,
             add: false,
+            question: journeySteps[currentStep].question,
+            chapter: journeySteps[currentStep].chapter,
+            image: image, // Pass the image property
           },
         });
       } else {
@@ -47,6 +47,9 @@ export const Journey = () => {
               tip: feedback.tip,
               points: addedAmount,
               add: add,
+              question: journeySteps[currentStep].question,
+              chapter: journeySteps[currentStep].chapter,
+              image: image, // Pass the image property
             },
           });
         } else {
@@ -59,6 +62,9 @@ export const Journey = () => {
               tip: "Continue to learn about investing",
               points: addedAmount,
               add: add,
+              question: journeySteps[currentStep].question,
+              chapter: journeySteps[currentStep].chapter,
+              image: image, // Pass the image property
             },
           });
         }
@@ -68,9 +74,8 @@ export const Journey = () => {
     });
   };
 
-
-  const handleNextStep = ({ points, add, feedback }) => {
-    updatePoints(points, add, feedback);
+  const handleNextStep = ({ points, add, feedback, image }) => {
+    updatePoints(points, add, feedback, image);
 
     if (currentStep < journeySteps.length - 1) {
       setCurrentStep(currentStep + 1);
@@ -85,6 +90,9 @@ export const Journey = () => {
           url: feedback.url,
           points: points,
           add: add,
+          question: journeySteps[currentStep].question,
+          chapter: journeySteps[currentStep].chapter,
+          image: image, // Pass the image property
         },
       });
     } else if (currentStep === journeySteps.length - 1) {
