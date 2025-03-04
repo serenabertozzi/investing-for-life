@@ -18,20 +18,6 @@ export const Journey = () => {
   const updatePoints = (addedAmount, add, feedback) => {
     setTotalPoints(prevPoints => {
       const newPoints = add ? prevPoints + addedAmount : prevPoints - addedAmount;
-
-      if (newPoints <= 0) {
-        navigate("/feedback", {
-          state: {
-            title: "Game Over",
-            step: currentStep,
-            outcome: "You have run out of points.",
-            lesson: "Try to manage your points better next time.",
-            tip: "Consider making different choices to maintain your points.",
-            points: addedAmount,
-            add: false,
-          },
-        });
-      } else {
         if (currentStep < journeySteps.length - 1) {
           setCurrentStep(currentStep + 1);
           navigate("/feedback", {
@@ -52,16 +38,11 @@ export const Journey = () => {
             state: {
               title:"Well done!",
               step: currentStep,
-              outcome: "You have completed the game!",
-              lesson: "You have successfully managed your points.",
-              tip: "Continue to learn about investing",
               points: addedAmount,
               add: add,
             },
           });
         }
-      }
-
       return newPoints;
     });
   };

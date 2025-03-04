@@ -143,3 +143,26 @@ export const journeySteps = [
           url: "https://platform.scottishwidows.co.uk/wp-content/uploads/Guide-to-investment-risks.pdf"} }],
        },
 ];
+
+
+export const endings = [ {
+  investorType: "The Financial Guru 🏆",
+  endStory: "After years of smart investing, you retire early, mortgage-free, and travel the world stress-free. Your investments continue to grow, providing you a luxurious and secure lifestyle. Congratulations—you’ve mastered financial independence!"
+},
+{
+  investorType: "The Balanced Investor 📊",
+  endStory: "You built a strong, diversified portfolio and secured your future. You might not retire early, but you’ll enjoy a comfortable life with financial stability. You own a home, have a well-funded pension, and can afford occasional luxuries. Smart moves!"
+},
+{
+  investorType: "The Learning Investor 🤔",
+  endStory:"You’ve made decent financial choices, but a few missteps held you back. You’ll retire eventually, but you might have to work a few extra years to maintain your lifestyle. You have savings, but wish you had invested sooner!"
+},
+{
+  investorType: "The Struggling Investor 😬	",
+  endStory:"You took some risky bets or ignored key investment opportunities. You’re living paycheck to paycheck, with little in savings, and your retirement plans are looking shaky. You now realize the importance of financial planning and vow to turn things around before it’s too late!"
+},
+{
+  investorType: "The Financially Lost 💸",
+  endStory:"Your financial decisions were reckless or nonexistent. Without savings, investments, or a pension, retirement is not an option, and financial stress dominates your life. You now wish you had started learning about money management earlier… but it's never too late to start!"
+}
+]
