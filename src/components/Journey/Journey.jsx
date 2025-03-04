@@ -15,17 +15,63 @@ export const Journey = () => {
 
   const { totalPoints, setTotalPoints } = usePoints();
 
-  console.log('after: ',totalPoints);
+  
 
+  const updatePoints = (addedAmount, add, feedback) => {
+    console.log('before: ', totalPoints);
 
-  const updatePoints = (addedAmount, add) => {
-    console.log('before: ',totalPoints);
+    setTotalPoints(prevPoints => {
+      const newPoints = add ? prevPoints + addedAmount : prevPoints - addedAmount;
 
-    add ? setTotalPoints(totalPoints + addedAmount) : setTotalPoints(totalPoints - addedAmount);    
-  }
+      if (newPoints <= 0) {
+        navigate("/feedback", {
+          state: {
+            title: "Game Over",
+            step: currentStep,
+            outcome: "You have run out of points.",
+            lesson: "Try to manage your points better next time.",
+            tip: "Consider making different choices to maintain your points.",
+            points: addedAmount,
+            add: false,
+          },
+        });
+      } else {
+        if (currentStep < journeySteps.length - 1) {
+          setCurrentStep(currentStep + 1);
+          navigate("/feedback", {
+            state: {
+              title: journeySteps[currentStep].chapter,
+              step: currentStep,
+              outcome: feedback.outcome,
+              lesson: feedback.lesson,
+              tip: feedback.tip,
+              points: addedAmount,
+              add: add,
+            },
+          });
+        } else {
+          navigate("/feedback", {
+            state: {
+              title:"Well done!",
+              step: currentStep,
+              outcome: "You have completed the game!",
+              lesson: "You have successfully managed your points.",
+              tip: "Continue to learn about investing",
+              points: addedAmount,
+              add: add,
+            },
+          });
+        }
+      }
+
+      return newPoints;
+    });
+  };
+
 
   const handleNextStep = ({ points, add, feedback }) => {
-    updatePoints(points, add);
+    updatePoints(points, add, feedback);
+
     if (currentStep < journeySteps.length - 1) {
       setCurrentStep(currentStep + 1);
       navigate("/feedback", {
