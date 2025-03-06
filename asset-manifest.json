@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/investing-for-life/static/css/main.307a01ab.css",
+    "main.js": "/investing-for-life/static/js/main.b1bc5ed4.js",
+    "static/js/885.9d8f9cf1.chunk.js": "/investing-for-life/static/js/885.9d8f9cf1.chunk.js",
+    "static/js/453.21f1e793.chunk.js": "/investing-for-life/static/js/453.21f1e793.chunk.js",
+    "static/media/room.png": "/investing-for-life/static/media/room.a01fde9064dc56ad0d35.png",
+    "static/media/leeds.png": "/investing-for-life/static/media/leeds.b136565035e80c5c3b31.png",
+    "static/media/london.png": "/investing-for-life/static/media/london.3b80d5715c3b7b5a9ecd.png",
+    "static/media/edinburgh.png": "/investing-for-life/static/media/edinburgh.aabe55a8205a548edf0d.png",
+    "static/media/town.png": "/investing-for-life/static/media/town.e70b3f3b5f82c99faf2d.png",
+    "static/media/bank.png": "/investing-for-life/static/media/bank.11704dfc431a0dc0b743.png",
+    "static/media/star.png": "/investing-for-life/static/media/star.aeea797cfef6d2393028.png",
+    "static/media/swlogo.png": "/investing-for-life/static/media/swlogo.2a40e87252a6951a91f1.png",
+    "static/media/boy.png": "/investing-for-life/static/media/boy.a8d6622cc854e465824c.png",
+    "static/media/girl-flower.png": "/investing-for-life/static/media/girl-flower.25165524a621f0a97c61.png",
+    "static/media/bee.png": "/investing-for-life/static/media/bee.c2b7ff48cc44daa06540.png",
+    "static/media/sheep.png": "/investing-for-life/static/media/sheep.673c35d0a9255d764fbc.png",
+    "static/media/girl-cherry.png": "/investing-for-life/static/media/girl-cherry.be9b6e87e6f15abba7fc.png",
+    "static/media/win.mp3": "/investing-for-life/static/media/win.5e01ae27ccbcc7f1e359.mp3",
+    "static/media/mushroom.png": "/investing-for-life/static/media/mushroom.3a5561f6664233dd7f4f.png",
+    "static/media/guru.png": "/investing-for-life/static/media/guru.ef9fb1f7d3d408a82e5d.png",
+    "static/media/happy.png": "/investing-for-life/static/media/happy.14d0435dc5465f337f1c.png",
+    "static/media/sad.png": "/investing-for-life/static/media/sad.b227cdabe5acb8099940.png",
+    "static/media/lose.mp3": "/investing-for-life/static/media/lose.04015353e4688c244d5e.mp3",
+    "static/media/broke.png": "/investing-for-life/static/media/broke.c2b4938a8cb0a3b4cd6a.png",
+    "static/media/very-happy.png": "/investing-for-life/static/media/very-happy.f0d5cdef39f99e6feb35.png",
+    "static/media/piggy.png": "/investing-for-life/static/media/piggy.b12c76b17bc061989955.png",
+    "static/media/learning.png": "/investing-for-life/static/media/learning.8dfca2ae294c93aeeee2.png",
+    "static/media/balance.png": "/investing-for-life/static/media/balance.953ac2f2b0b59c121af6.png",
+    "index.html": "/investing-for-life/index.html",
+    "main.307a01ab.css.map": "/investing-for-life/static/css/main.307a01ab.css.map",
+    "main.b1bc5ed4.js.map": "/investing-for-life/static/js/main.b1bc5ed4.js.map",
+    "885.9d8f9cf1.chunk.js.map": "/investing-for-life/static/js/885.9d8f9cf1.chunk.js.map",
+    "453.21f1e793.chunk.js.map": "/investing-for-life/static/js/453.21f1e793.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.307a01ab.css",
+    "static/js/main.b1bc5ed4.js"
+  ]
+}
