@@ -63,8 +63,8 @@ export const Feedback = () => {
   const chapter = journeySteps[step].chapter;
 
   const winOrLose = add
-    ? `🎉 You have gained ${points} SW Coins!`
-    : `😢 You lost  ${points} SW Coins!`;
+    ? `🎉 You have gained ${points} coins!`
+    : `😢 You lost  ${points} coins!`;
 
   const chooseBackground = () => {
     switch (chapter) {

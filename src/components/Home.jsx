@@ -7,7 +7,7 @@ import bee from "../assets/avatars/bee.png";
 import sheep from "../assets/avatars/sheep.png";
 import boy from "../assets/avatars/boy.png";
 import mushroom from "../assets/avatars/mushroom.png";
-import swLogo from "../assets/swlogo.png";
+// import swLogo from "../assets/swlogo.png";
 import { useEffect, useState } from "react";
 
 export const Home = () => {
