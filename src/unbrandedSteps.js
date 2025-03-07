@@ -2,7 +2,7 @@ import happy from './assets/emotions/happy.png';
 import veryhappy from './assets/emotions/very-happy.png';
 import sad from './assets/emotions/sad.png';
 
-export const journeySteps = [
+export const journeyStepsUnbranded = [
   {
     chapter: "Chapter 1",
     title: "Your First Paycheck – Where Does It Go?",
@@ -20,7 +20,7 @@ export const journeySteps = [
           lesson: "Keeping money in a savings account is safe, but over time, inflation erodes its value. The average interest rate on savings accounts is often lower than inflation, meaning your money loses purchasing power over time.",
           tip: "Learn More:",
           linkText: "Learn about investing",
-          url: "https://www.scottishwidows.co.uk/investments/learn.html",
+          url: "https://www.investopedia.com/terms/i/investing.asp",
         },
         image: sad,
       },
@@ -35,13 +35,13 @@ export const journeySteps = [
           lesson: "Investing in individual stocks can lead to high returns, but it’s also high risk. If you put all your money in one company and it fails, you lose everything. Professional investors spread their money across different assets (diversification) to reduce risk.",
           tip: "Learn More:",
           linkText: "Investing basics",
-          url: "https://www.scottishwidowsbemoneywell.co.uk/financial-essentials/investing-basics.html",
+          url: "https://www.investopedia.com/investing-4427685",
         },
         image: happy, 
       },
       {
         emoji: "🏦",
-        heading: "Open a Scottish Widows Stocks & Shares ISA",
+        heading: "Open a Stocks & Shares ISA",
         text: "A tax-efficient way to invest, but market risk still applies.",
         points: 15,
         add: true,
@@ -50,7 +50,7 @@ export const journeySteps = [
           lesson: "A Stocks & Shares ISA lets you invest in a mix of stocks, bonds, and funds, while shielding your profits from tax. Unlike a regular savings account, it protects your money from inflation and allows it to grow over time.",
           tip: "Learn More:",
           linkText: "Stocks and Shares ISA",
-          url: "https://platform.scottishwidows.co.uk/products-and-services/stock-and-shares-isa/",
+          url: "https://www.investopedia.com/terms/i/isa.asp",
         },
         image: veryhappy, 
       },
@@ -71,14 +71,14 @@ export const journeySteps = [
           outcome: "You’re taking a big risk—will it pay off?",
           lesson: "Betting everything on a single stock could lead to huge rewards if it performs well, but if it drops, you lose everything, making diversification a much safer strategy.",
           tip: "Learn How to Diversify Your Investments:",
-          linkText: "Scottish Widows Guide to Multi-Asset Funds",
-          url: "https://adviser.scottishwidows.co.uk/expertise/individual-retirement-centre/multi-asset/customer-guide.html",
+          linkText: "Guide to Multi-Asset Funds",
+          url: "https://www.investopedia.com/terms/m/multi-asset-fund.asp",
         },
         image: sad, 
       },
       {
         emoji: "📊",
-        heading: "Invest in Scottish Widows Pension Fund",
+        heading: "Invest in a Pension Fund",
         text: "Long-term security, but money is locked until retirement.",
         points: 15,
         add: true,
@@ -87,13 +87,13 @@ export const journeySteps = [
           lesson: "A pension fund is one of the best long-term investments. You get tax benefits, employer contributions (if applicable), and compounding growth over decades. However, the trade-off is that you can’t access your pension until later in life.",
           tip: "Learn More & Plan Your Pension:",
           linkText: "What is a pension?",
-          url: "https://www.scottishwidows.co.uk/retirement/retirement-explained/basics/pensions-guide.html",
+          url: "https://www.investopedia.com/terms/p/pensionplan.asp",
         },
         image: veryhappy, 
       },
       {
         emoji: "💼",
-        heading: "Open a Scottish Widows General Investment Account (GIA)",
+        heading: "Open a General Investment Account (GIA)",
         text: "More flexible than a pension, but no tax relief.",
         points: 10,
         add: true,
@@ -101,8 +101,8 @@ export const journeySteps = [
           outcome: "Good move! You get more flexibility, but there are no tax benefits.",
           lesson: "A General Investment Account (GIA) is a good option if you’ve maxed out your ISA contributions or need more access to your investments. Unlike a pension, there are no restrictions on when you can withdraw, but you might pay tax on your gains.",
           tip: "Compare GIAs & ISAs:",
-          linkText: "Scottish Widows GIA",
-          url: "https://platform.scottishwidows.co.uk/client/products-and-services/general-investment-account/?accept=client",
+          linkText: "General Investment Account",
+          url: "https://www.investopedia.com/terms/g/general-investment-account.asp",
         },
         image: happy, 
       },
@@ -125,7 +125,7 @@ export const journeySteps = [
           lesson: "Staying invested in a diversified portfolio allows you to ride out market fluctuations and benefit from long-term growth, rather than reacting to short-term drops.",
           tip: "Learn How to Handle Market Ups & Downs:",
           linkText: "Investing in the stock market",
-          url: "https://www.scottishwidows.co.uk/investments/learn/investing-in-the-stock-market.html",
+          url: "https://www.investopedia.com/terms/s/stockmarket.asp",
         },
         image: veryhappy, 
       },
@@ -140,7 +140,7 @@ export const journeySteps = [
           lesson: "Selling during a market crash turns a temporary paper loss into a real loss, preventing you from benefiting when the market recovers over time.",
           tip: "Understanding Risk & Emotional Investing:",
           linkText: "What is investing?",
-          url: "https://www.scottishwidows.co.uk/investments/learn.html",
+          url: "https://www.investopedia.com/terms/i/investing.asp",
         },
         image: happy, 
       },
@@ -154,8 +154,8 @@ export const journeySteps = [
           outcome: "You avoided risk, but you also locked in lower returns.",
           lesson: "Moving everything to cash protects against losses, but it also limits potential growth since savings accounts often fail to keep up with inflation.",
           tip: "When to Save vs. When to Invest:",
-          linkText: "Scottish Widows Investment & Savings Guide",
-          url: "https://www.scottishwidows.co.uk/investments/learn/savings-and-investments.html",
+          linkText: "Investment & Savings Guide",
+          url: "https://www.investopedia.com/terms/s/savings.asp",
         },
         image: sad, 
       },
@@ -169,7 +169,7 @@ export const journeySteps = [
     answers: [
       {
         emoji: "💼",
-        heading: "Open a Scottish Widows Workplace Pension or Personal Pension",
+        heading: "Open a Workplace Pension or Personal Pension",
         text: "Tax benefits, employer contributions, but money is locked away.",
         points: 15,
         add: true,
@@ -177,14 +177,14 @@ export const journeySteps = [
           outcome: "Fantastic! You’re maximizing tax benefits and employer contributions.",
           lesson: "A pension is one of the most tax-efficient ways to invest, with added employer contributions and government tax relief helping your money grow faster over time.",
           tip: "Plan for Your Retirement:",
-          linkText: "Scottish Widows Pension Calculator",
-          url: "https://www.scottishwidows.co.uk/retirement/calculators-tools.html",
+          linkText: "Pension Calculator",
+          url: "https://www.investopedia.com/terms/p/pensionplan.asp",
         },
         image: veryhappy, 
       },
       {
         emoji: "📈",
-        heading: "Invest through a Scottish Widows General Investment Account (GIA)",
+        heading: "Invest through a General Investment Account (GIA)",
         text: "Good flexibility, but lacks pension tax benefits.",
         points: 10,
         add: true,
@@ -193,7 +193,7 @@ export const journeySteps = [
           lesson: "A GIA lets you invest flexibly and withdraw anytime, but it lacks the tax advantages of a pension, meaning you might pay capital gains tax on your returns.",
           tip: "Compare Pensions vs. GIAs:",
           linkText: "Your Options",
-          url: "https://www.scottishwidows.co.uk/investments/options.html",
+          url: "https://www.investopedia.com/terms/g/general-investment-account.asp",
         },
         image: happy, 
       },
@@ -207,8 +207,8 @@ export const journeySteps = [
           outcome: "The later you start, the harder it is to save!",
           lesson: "The earlier you start saving for retirement, the less you need to save each month, thanks to the power of compound interest working over decades.",
           tip: "Why Starting Early Matters:",
-          linkText: "Scottish Widows Funds",
-          url: "https://www.scottishwidows.co.uk/investments/options/pip/scottish-widows.html",
+          linkText: "Investment Funds",
+          url: "https://www.investopedia.com/terms/f/fund.asp",
         },
         image: sad, 
       },
@@ -222,7 +222,7 @@ export const journeySteps = [
     answers: [
       {
         emoji: "🏦",
-        heading: "Open a Scottish Widows Lifetime ISA (LISA).",
+        heading: "Open a Lifetime ISA (LISA).",
         text: "Gov bonus helps, but limited annual contributions.",
         points: 15,
         add: true,
@@ -230,8 +230,8 @@ export const journeySteps = [
           outcome: "Great strategy! The government helps boost your savings.",
           lesson: "A Lifetime ISA helps first-time homebuyers save faster by offering a 25% government bonus, but it has an annual contribution limit.",
           tip: "Learn More:",
-          linkText: "Scottish Widows Guide to Saving for a Home",
-          url: "https://www.scottishwidowsbemoneywell.co.uk/life-money-moments/home-purchase.htm",
+          linkText: "Guide to Saving for a Home",
+          url: "https://www.investopedia.com/terms/l/lifetime-isa.asp",
         },
         image: veryhappy, 
       },
@@ -245,8 +245,8 @@ export const journeySteps = [
           outcome: "You got your home, but was the timing right",
           lesson: "Buying property is a long-term investment, but if you cash out stocks at the wrong time, you may miss out on future gains.",
           tip: "Plan Your Home Purchase Wisely:",
-          linkText: "Scottish Widows Guide to Saving for a Home",
-          url: "https://www.scottishwidowsbemoneywell.co.uk/life-money-moments/home-purchase.htm",
+          linkText: "Guide to Saving for a Home",
+          url: "https://www.investopedia.com/terms/l/lifetime-isa.asp",
         },
         image: sad, 
       },
@@ -261,32 +261,10 @@ export const journeySteps = [
           lesson: "While crypto has created quick gains for some, it remains highly volatile, meaning you could lose most of your investment overnight.",
           tip: "Understanding Investment Risk:",
           linkText: "Guide to Investment Risks",
-          url: "https://platform.scottishwidows.co.uk/wp-content/uploads/Guide-to-investment-risks.pdf",
+          url: "https://www.investopedia.com/terms/c/cryptocurrency.asp",
         },
         image: happy, 
       },
     ],
   },
 ];
-
-export const endings = [ {
-  investorType: "The Financial Guru 🏆",
-  endStory: "After years of smart investing, you retire early, mortgage-free, and travel the world stress-free. Your investments continue to grow, providing you a luxurious and secure lifestyle. Congratulations—you’ve mastered financial independence!"
-},
-{
-  investorType: "The Balanced Investor 📊",
-  endStory: "You built a strong, diversified portfolio and secured your future. You might not retire early, but you’ll enjoy a comfortable life with financial stability. You own a home, have a well-funded pension, and can afford occasional luxuries. Smart moves!"
-},
-{
-  investorType: "The Learning Investor 🤔",
-  endStory:"You’ve made decent financial choices, but a few missteps held you back. You’ll retire eventually, but you might have to work a few extra years to maintain your lifestyle. You have savings, but wish you had invested sooner!"
-},
-{
-  investorType: "The Struggling Investor 😬	",
-  endStory:"You took some risky bets or ignored key investment opportunities. You’re living paycheck to paycheck, with little in savings, and your retirement plans are looking shaky. You now realize the importance of financial planning and vow to turn things around before it’s too late!"
-},
-{
-  investorType: "The Financially Lost 💸",
-  endStory:"Your financial decisions were reckless or nonexistent. Without savings, investments, or a pension, retirement is not an option, and financial stress dominates your life. You now wish you had started learning about money management earlier… but it's never too late to start!"
-}
-]

@@ -9,7 +9,6 @@ import boy from "../assets/avatars/boy.png";
 import mushroom from "../assets/avatars/mushroom.png";
 import swLogo from "../assets/swlogo.png";
 import { useEffect, useState } from "react";
-import { Footer } from "./Footer";
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -29,7 +28,7 @@ export const Home = () => {
   return (
     <div className="flex flex-col items-center gap-10 justify-center h-screen">
       <div className="flex flex-col items-center gap-4">
-        <img className="w-56" src={swLogo} alt="SW Logo" />
+        {/* <img className="w-56" src={swLogo} alt="SW Logo" /> */}
         <h1 className="text-dark-green font-semibold text-6xl">
           Investing for Life
         </h1>

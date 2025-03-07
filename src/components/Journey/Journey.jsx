@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Heading } from "./Heading";
 import { HeroBanner } from "./HeroBanner";
-import { journeySteps } from "../../steps";
+// import { journeySteps } from "../../steps";
+import { journeyStepsUnbranded } from "../../unbrandedSteps";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Choice } from "./Choice";
 import { usePoints } from '../../hooks/usePoints';
-import { Footer } from "../Footer";
 import swLogo from "../../assets/swlogo.png";
 
 export const Journey = () => {
@@ -21,18 +21,18 @@ export const Journey = () => {
     setTotalPoints(prevPoints => {
       const newPoints = add ? prevPoints + addedAmount : prevPoints - addedAmount;
       
-        if (currentStep < journeySteps.length - 1) {
+        if (currentStep < journeyStepsUnbranded.length - 1) {
           setCurrentStep(currentStep + 1);
           navigate("/feedback", {
             state: {
-              title: journeySteps[currentStep].chapter,
+              title: journeyStepsUnbranded[currentStep].chapter,
               step: currentStep,
               outcome: feedback.outcome,
               lesson: feedback.lesson,
               tip: feedback.tip,
               points: addedAmount,
               add: add,
-              question: journeySteps[currentStep].question,
+              question: journeyStepsUnbranded[currentStep].question,
               image: image, 
               linkText: feedback.linkText,
               url: feedback.url,
@@ -55,11 +55,11 @@ export const Journey = () => {
   const handleNextStep = ({ points, add, feedback, image }) => {
     updatePoints(points, add, feedback, image);
 
-    if (currentStep < journeySteps.length - 1) {
+    if (currentStep < journeyStepsUnbranded.length - 1) {
       setCurrentStep(currentStep + 1);
       navigate("/feedback", {
         state: {
-          title: journeySteps[currentStep].chapter,
+          title: journeyStepsUnbranded[currentStep].chapter,
           step: currentStep,
           outcome: feedback.outcome,
           lesson: feedback.lesson,
@@ -68,19 +68,19 @@ export const Journey = () => {
           url: feedback.url,
           points: points,
           add: add,
-          question: journeySteps[currentStep].question,
-          chapter: journeySteps[currentStep].chapter,
+          question: journeyStepsUnbranded[currentStep].question,
+          chapter: journeyStepsUnbranded[currentStep].chapter,
           image: image, 
         },
       });
-    } else if (currentStep === journeySteps.length - 1) {
+    } else if (currentStep === journeyStepsUnbranded.length - 1) {
       navigate("/feedback", {
         state: { title: "Game Over", step: currentStep },
       });
     }
   };
 
-  const { chapter, title, question, answers } = journeySteps[currentStep];
+  const { chapter, title, question, answers } = journeyStepsUnbranded[currentStep];
 
   return (
     <>

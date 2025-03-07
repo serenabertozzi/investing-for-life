@@ -1,6 +1,6 @@
 import "./App.css";
 import { Home } from "./components/Home";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import { Quiz } from "./pages/quiz";
 import { CharacterAvatarProvider } from "./context/CharacterAvatarContext";
 import { PointsProvider } from "./context/PointsContext";
@@ -13,7 +13,7 @@ export const App = () => {
   return (
     <PointsProvider>
       <CharacterAvatarProvider>
-        <BrowserRouter>
+        <HashRouter>
           <div className="flex flex-col min-h-screen">
             <Routes>
               <Route path={"/"} element={<Home />} />
@@ -24,7 +24,7 @@ export const App = () => {
             </Routes>
             <Footer />
           </div>
-        </BrowserRouter>
+        </HashRouter>
       </CharacterAvatarProvider>
     </PointsProvider>
   );
