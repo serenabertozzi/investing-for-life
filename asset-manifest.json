@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/investing-for-life/static/css/main.307a01ab.css",
-    "main.js": "/investing-for-life/static/js/main.4884d5d2.js",
+    "main.js": "/investing-for-life/static/js/main.c8b45ea6.js",
     "static/js/885.2e757b3a.chunk.js": "/investing-for-life/static/js/885.2e757b3a.chunk.js",
     "static/js/453.f4c7b947.chunk.js": "/investing-for-life/static/js/453.f4c7b947.chunk.js",
     "static/media/room.png": "/investing-for-life/static/media/room.a01fde9064dc56ad0d35.png",
@@ -30,12 +30,12 @@
     "static/media/balance.png": "/investing-for-life/static/media/balance.953ac2f2b0b59c121af6.png",
     "index.html": "/investing-for-life/index.html",
     "main.307a01ab.css.map": "/investing-for-life/static/css/main.307a01ab.css.map",
-    "main.4884d5d2.js.map": "/investing-for-life/static/js/main.4884d5d2.js.map",
+    "main.c8b45ea6.js.map": "/investing-for-life/static/js/main.c8b45ea6.js.map",
     "885.2e757b3a.chunk.js.map": "/investing-for-life/static/js/885.2e757b3a.chunk.js.map",
     "453.f4c7b947.chunk.js.map": "/investing-for-life/static/js/453.f4c7b947.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.307a01ab.css",
-    "static/js/main.4884d5d2.js"
+    "static/js/main.c8b45ea6.js"
   ]
 }
