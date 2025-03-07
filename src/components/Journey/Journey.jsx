@@ -75,7 +75,7 @@ export const Journey = () => {
       });
     } else if (currentStep === journeyStepsUnbranded.length - 1) {
       navigate("/feedback", {
-        state: { title: "Game Over", step: currentStep },
+        state: { title: "Your financial profile", step: currentStep },
       });
     }
   };
